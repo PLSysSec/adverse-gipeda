@@ -6,6 +6,7 @@ example/site
 example/src
 site/out
 .shake.database
+.stack-work
 site/js/Hasheor
 logs
 repository
