@@ -1,0 +1,38 @@
+title: Adverse perf statistics
+diffLink: ""
+revisionInfo: '<a href="https://github.com/plsyssec/newad/commit/{{rev}}">View Diff</a>'
+limitRecent: 50
+start: addc4cd1928796b707b6d14369c72f07a38522c5
+interestingTags: "*"
+
+benchmarks:
+  - match: "*"
+    smallerIsBetter: False
+    threshold: 1
+    type: integral
+    group: (ungrouped)
+  - match: "build/warnings"
+    smallerIsBetter: True
+    threshold: 1
+    type: small integral
+    unit: warnings
+    group: (ungrouped)
+  - match: "Backend/*"
+    smallerIsBetter: False
+    threshold: 1
+    type: integral
+    unit: microseconds
+    group: Backend
+  - match: "End to end/*"
+    smallerIsBetter: False
+    threshold: 1
+    type: integral
+    unit: microseconds
+    group: End to end
+  - match: "Frontend/*"
+    smallerIsBetter: False
+    threshold: 1
+    type: integral
+    unit: microseconds
+    group: Frontend
+
