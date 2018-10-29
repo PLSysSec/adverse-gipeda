@@ -8,19 +8,19 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-# Check overall load to ensure we're (mostly) idle for good benchmarking
-source idledetect.sh
-if [ `idlepct` -lt 95 ]; then
-  echo "not idle enough"
-  exit 1
-fi
-
 git -C repository fetch --all -t
 start=$1
 if [ $# -eq 1 ]; then end=origin/master; else end=$2; fi
 touch badcommits
+source idledetect.sh
 
 while read -r rev; do
+  # Check overall load to ensure we're (mostly) idle for good benchmarking
+  if [ `idlepct` -lt 95 ]; then
+    echo "not idle enough"
+    exit 1
+  fi
+
   revhash=`git -C repository rev-parse $rev`
   echo "Benchmarking commit $revhash"
   if grep --quiet "^$revhash$" badcommits; then
