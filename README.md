@@ -54,6 +54,11 @@ you really want to re-collect data for a commit you've already collected for,
 just delete `logs/<hash>.log`, where `<hash>` is the Git hash of the commit
 whose data you want to remove; then re-run your command.
 
+Also, `bench-range` (but not `bench-commit`, at the moment) will refuse to
+run if the machine is not at least 95% idle when the command starts. This is
+partly to avoid disturbing other processes on the machine, and partly to
+ensure consistent benchmarking results.
+
 Viewing data
 --------------
 
