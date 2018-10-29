@@ -11,7 +11,7 @@ if [ -e $logfile ]; then
 else
   echo "Running benchmarks..."
   cd repository
-  git checkout $rev
+  git checkout -q $rev
   stack clean  # for accurate count of build warnings
   stack bench --no-terminal 2> $logfile.tmp
   if [ $? -ne 0 ]; then
