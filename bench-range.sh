@@ -38,4 +38,4 @@ while read -r rev; do
       fi
     fi
   fi
-done < <(git -C repository rev-list "$start..$end")
+done < <(git -C repository rev-list --reverse "$start^..$end")
