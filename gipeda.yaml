@@ -18,21 +18,20 @@ benchmarks:
     unit: warnings
     group: (ungrouped)
   - match: "Backend/*"
-    smallerIsBetter: False
-    threshold: 1
+    smallerIsBetter: True
+    threshold: 5
     type: integral
     unit: microseconds
     group: Backend
   - match: "End to end/*"
-    smallerIsBetter: False
-    threshold: 1
+    smallerIsBetter: True
+    threshold: 5
     type: integral
     unit: microseconds
     group: End to end
   - match: "Frontend/*"
-    smallerIsBetter: False
-    threshold: 1
+    smallerIsBetter: True
+    threshold: 5
     type: integral
     unit: microseconds
     group: Frontend
-
