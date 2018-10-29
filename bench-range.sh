@@ -5,6 +5,8 @@ if [ $# -eq 0 ]; then
   echo "  where START and END specify git commits"
   echo "  in any way accepted by git, e.g. hashes,"
   echo "  branch names, tags, etc."
+  echo "  If END is omitted, it defaults to"
+  echo "  origin/master."
   exit 1
 fi
 
