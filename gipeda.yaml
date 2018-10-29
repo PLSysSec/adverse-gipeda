@@ -1,8 +1,8 @@
 title: Adverse perf statistics
-diffLink: ""
-revisionInfo: '<a href="https://github.com/plsyssec/newad/commit/{{rev}}">View Diff</a>'
+diffLink: "https://github.com/plsyssec/adverse/compare/{{base}}...{{rev}}"
+revisionInfo: '<a href="https://github.com/plsyssec/adverse/commit/{{rev}}">View Commit on GitHub</a>'
 limitRecent: 50
-start: addc4cd1928796b707b6d14369c72f07a38522c5
+start: 8ab745cd4e6681de1fc77f76b5ef84807661f74b
 interestingTags: "*"
 
 benchmarks:
