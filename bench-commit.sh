@@ -13,12 +13,13 @@ else
   cd repository
   git checkout $rev
   stack clean  # for accurate count of build warnings
-  stack bench --no-terminal 2> $logfile
+  stack bench --no-terminal 2> $logfile.tmp
   if [ $? -ne 0 ]; then
     echo "running benchmarks failed"
-    rm $logfile
+    rm $logfile.tmp
     exit 1
   fi
+  mv $logfile.tmp $logfile  # so we don't get an incomplete log in $logfile.  All or nothing
   cd ..
 fi
 
