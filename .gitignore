@@ -9,6 +9,7 @@ site/out
 .stack-work
 site/js/Hasheor
 logs
+badcommits
 repository
 deploy.sh
 site/js/bootstrap/

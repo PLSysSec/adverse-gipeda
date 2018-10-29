@@ -42,11 +42,17 @@ arguments, the script defaults to collecting data for the current
 `./bench-commit.sh COMMIT` where `COMMIT` is anything recognized by `git` as
 a commit, e.g. a hash, branch name, tag, etc.
 
-`./bench-commit.sh` will refuse to collect data for any commit you've already
-benchmarked (to avoid overwriting the previous data). If you really want to
-re-collect data for a commit you've already collected for, just delete
-`logs/<hash>.log`, where `<hash>` is the Git hash of the commit whose data
-you want to remove.
+To collect data for every commit in a range, run `./bench-range.sh START END`,
+where `START` and `END` are git commits, e.g. hashes, branch names, tags, etc.
+If `END` is omitted, it defaults to `origin/master`.
+
+Both `./bench-commit.sh` and `./bench-range.sh` will refuse to collect data
+for any commit you've already benchmarked (to avoid overwriting the previous
+data, and in the case of `bench-range`, also to avoid the time cost of
+re-benchmarking any commits in the range that were already benchmarked). If
+you really want to re-collect data for a commit you've already collected for,
+just delete `logs/<hash>.log`, where `<hash>` is the Git hash of the commit
+whose data you want to remove; then re-run your command.
 
 Viewing data
 --------------

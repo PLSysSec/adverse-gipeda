@@ -17,12 +17,12 @@ else
   if [ $? -ne 0 ]; then
     echo "running benchmarks failed"
     rm $logfile
-    exit
+    exit 1
   fi
   cd ..
 fi
 
 echo "Generating HTML report..."
-stack exec gipeda -- -j4 || exit
+stack exec gipeda -- -j4 || exit 1
 
 echo "All done. View results by pointing a browser at site/index.html."
