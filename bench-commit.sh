@@ -16,7 +16,7 @@ else
   stack bench --no-terminal 2> $logfile.tmp
   if [ $? -ne 0 ]; then
     echo "running benchmarks failed"
-    rm $logfile.tmp
+    # rm $logfile.tmp  # actually, if we leave logfile.tmp around, we can troubleshoot the benchmark
     exit 1
   fi
   mv $logfile.tmp $logfile  # so we don't get an incomplete log in $logfile.  All or nothing
