@@ -2,7 +2,7 @@
 
 git -C repository fetch --all -t
 git -C repository checkout -q master
-git -C repository pull
+git -C repository pull -q
 if [ $# -eq 0 ]; then rev=origin/master; else rev=$1; fi
 githash=`git -C repository rev-parse $rev`
 mkdir -p logs
